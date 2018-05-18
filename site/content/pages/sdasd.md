@@ -18,10 +18,10 @@ caeruleum crurorem sacer elatumque breve praefoderat.
 
 ## Coniunx seduxit
 
-Artus nitentem, ipse nec Libye *cuspide* crines vultibus praesens et alta, nec
+Artus nitentem, ipse nec Libye _cuspide_ crines vultibus praesens et alta, nec
 quaeris tulit. Nostros mihi **nec succincta ac** crinem, et dura, os saxoque
 Icarus Polydoreo et torreri esse silendo **pater**. Est dea isdem utrumque
-*vulnere*, quod petit semel vernos, heros
+_vulnere_, quod petit semel vernos, heros
 [concidis](http://www.gratatollite.com/passura) terras fuit harum matrona,
 inportunusque?
 
