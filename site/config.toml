@@ -1,16 +1,24 @@
 baseurl = "/"
 languageCode = "en-us"
 title = "Homepage"
-defaultContentLanguage = "en"
+DefaultContentLanguage = "en"
+copyright = "Everything is mine"
 
+[languages]
+  [languages.en]
+    title = "My blog"
+    weight = 1
+    [languages.en.params]
+      linkedin = "english-link"
+  [languages.fr]
+    copyright = "Tout est à moi"
+    title = "Mon blog"
+    weight = 2
+    [languages.fr.params]
+      linkedin = "lien-francais"
+      [languages.fr.params.navigation]
+        help = "Aide"
 
-[Languages]
-[Languages.en]
-title = "Documentation for Hugo Learn Theme"
-weight = 1
-languageName = "English"
-
-[Languages.fr]
-title = "Documentation du thème Hugo Learn"
-weight = 2
-languageName = "Français"
+[params]
+  [params.navigation]
+    help = "Help"
