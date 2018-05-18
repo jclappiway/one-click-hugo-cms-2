@@ -1,16 +1,16 @@
 baseurl = "/"
 languageCode = "en-us"
 title = "Homepage"
-DefaultContentLanguage = "en"
+defaultContentLanguage = "en"
 
-[languages]
-  [languages.en]
-    title = "English"
-    weight = 1
-  [languages.ae]
-    title = "AE"
-    weight = 2
-  [languages.bh]
-    title = "BH"
-    weight = 2
- 
+
+[Languages]
+[Languages.en]
+title = "Documentation for Hugo Learn Theme"
+weight = 1
+languageName = "English"
+
+[Languages.fr]
+title = "Documentation du thème Hugo Learn"
+weight = 2
+languageName = "Français"
