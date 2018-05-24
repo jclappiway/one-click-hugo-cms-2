@@ -10,6 +10,7 @@ collections:
     folder: "site/content/countries"
     create: true
     fields:
+      - {label: "Title", name: "title", widget: "string"}
       - {label: "name", name: "country", widget: "string"}
   - name: "ae_pages"
     label: "Blog in AE"
@@ -42,5 +43,6 @@ collections:
     filter: {field: "country", value: "ae"}
     create: true
     fields:
+      - {label: "Title", name: "title", widget: "string"}
       - {label: "Country", name: "country", widget: "select", options: ["ae", "bh"]}
       
