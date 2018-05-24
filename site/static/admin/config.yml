@@ -23,18 +23,18 @@ collections:
       - {label: "Country", name: "country", widget: "select", options: ["ae", "bh"]}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
-- label: "Links"
-  name: "links"
-  files:
-    - label: "Links AE"
-      name: "links_ae"
-      file: "site/content/links_ae.yml"
-      fields:
-        - {label: Title, name: title, widget: string}
-        - {label: Url, name: url, widget: string}
-    - label: "Links BH"
-      name: "links_bh"
-      file: "site/content/links_bh.yml"
-      fields:
-        - {label: Title, name: title, widget: string}
-        - {label: Url, name: url, widget: string}
+  - name: "links"
+    label: "Links"
+    files:
+      - label: "Links AE"
+        name: "links_ae"
+        file: "site/content/links_ae.yml"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Url, name: url, widget: string}
+      - label: "Links BH"
+        name: "links_bh"
+        file: "site/content/links_bh.yml"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Url, name: url, widget: string}
