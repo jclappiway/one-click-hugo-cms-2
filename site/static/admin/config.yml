@@ -21,7 +21,6 @@ collections:
     label: "Pages"
     folder: "site/content/pages"
     create: true
-    slug: "{{country}}--{{slug}}"
     extension: "json"
     editor:
           preview: false
