@@ -14,7 +14,7 @@ collections:
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "name", name: "country", widget: "string"}
+      - {label: "name", name: "name", widget: "string"}
   - name: "Page"
     label: "Blog in AE"
     filter: {field: "country", value: "ae"}
@@ -23,7 +23,7 @@ collections:
     fields:
       - label: "Post Author"
         name: "author"
-        widget: "relationPagePost"
+        widget: "relation"
         collection: "countries"
         displayFields: ["title", "name"]
         searchFields: ["title", "name"]
