@@ -10,10 +10,15 @@ collections: # A list of collections the CMS should be able to edit
     filter: {field: "country", value: "ae"}
     folder: "site/content/pages" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    fields: # The fields each document in this collection have
+    fields:
       - {label: "Country", name: "country", widget: "select", options: ["ae", "bh"]}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Countries"
+        name: "countries"
+        widget: "list"
+        allow_add: false
+        default: ["ae","bh","fr"]
   - name: "bh_pages" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Blog in BH"
     filter: {field: "country", value: "bh"}
