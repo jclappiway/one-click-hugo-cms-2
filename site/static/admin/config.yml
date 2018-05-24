@@ -4,55 +4,50 @@ backend:
 media_folder: "site/static/img"
 public_folder: "img"
 
-publish_mode: editorial_workflow # optional, enables publishing workflow
-
 collections:
   - name: "countries"
     label: "Countries"
     label_singular: "Country"
     folder: "site/content/countries"
     create: true
+    extension: "json"
     editor:
-      preview: false
+        preview: false
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "name", name: "name", widget: "string"}
-  - name: "Page"
-    label: "Blog in AE"
-    filter: {field: "country", value: "ae"}
-    folder: "site/content/pages/ae"
+      - {label: "Key", name: "name", widget: "string"}
+
+  - name: "pages"
+    label: "Pages"
+    folder: "site/content/pages"
     create: true
+    slug: "{{country}}--{{slug}}"
+    extension: "json"
+    editor:
+          preview: false
     fields:
-      - label: "Country"
-        name: "country"
-        widget: "relation"
-        collection: "countries"
-        displayFields: ["title", "name"]
-        searchFields: ["title", "name"]
-        valueField: "name"
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
-  - name: "bh_pages"
-    label: "Blog in BH"
-    filter: {field: "country", value: "bh"}
-    folder: "site/content/pages/bh"
-    create: true
-    fields:
-      - label: "Country"
-        name: "country"
-        widget: "relation"
-        collection: "countries"
-        displayFields: ["title", "name"]
-        searchFields: ["title", "name"]
-        valueField: "name"
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Countries"
+        name: "countries"
+        widget: "list"
+        fields:
+          - label: "Country"
+            name: "country"
+            widget: "relation"
+            collection: "countries"
+            searchFields: ["title", "name"]
+            displayFields: ["title", "name"]
+            valueField: "name"
+
   - name: "menus"
     label: "Menus"
     folder: "site/content/menus"
     create: true
     slug: "{{country}}--{{slug}}"
     extension: "json"
+    editor:
+          preview: false
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - label: "Country"
