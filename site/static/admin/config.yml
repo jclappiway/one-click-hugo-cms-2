@@ -12,6 +12,8 @@ collections:
     label_singular: "Country"
     folder: "site/content/countries"
     create: true
+    editor:
+      preview: false
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "name", name: "name", widget: "string"}
@@ -21,14 +23,13 @@ collections:
     folder: "site/content/pages/ae"
     create: true
     fields:
-      - label: "Post Author"
-        name: "author"
+      - label: "Country"
+        name: "country"
         widget: "relation"
         collection: "countries"
         displayFields: ["title", "name"]
         searchFields: ["title", "name"]
-        valueField: "title"
-      - {label: "Country", name: "country", widget: "select", options: ["ae", "bh"]}
+        valueField: "name"
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "bh_pages"
@@ -37,15 +38,35 @@ collections:
     folder: "site/content/pages/bh"
     create: true
     fields:
-      - {label: "Country", name: "country", widget: "select", options: ["ae", "bh"]}
+      - label: "Country"
+        name: "country"
+        widget: "relation"
+        collection: "countries"
+        displayFields: ["title", "name"]
+        searchFields: ["title", "name"]
+        valueField: "name"
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
-  - name: "ae_links"
-    label: "Liens dans AE"
-    folder: "site/content/links"
-    filter: {field: "country", value: "ae"}
+  - name: "menus"
+    label: "Menus"
+    folder: "site/content/menus"
     create: true
+    slug: "{{country}}--{{slug}}"
+    extension: "json"
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Country", name: "country", widget: "select", options: ["ae", "bh"]}
-      
+      - label: "Country"
+        name: "country"
+        widget: "relation"
+        collection: "countries"
+        displayFields: ["title", "name"]
+        searchFields: ["title", "name"]
+        valueField: "name"
+      - name: links
+        label: Links
+        label_singular: "Link"
+        widget: list
+        fields:
+          - {label: "Text", name: "text", widget: "string"}
+          - {label: "Url", name: "url", widget: "string"}
+          - {label: "Target", name: "target", widget: "select", options: ["_self", "_blank"]}
