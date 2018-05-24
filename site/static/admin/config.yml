@@ -1,29 +1,40 @@
 backend:
   name: git-gateway
 
-media_folder: "site/static/img" # Folder where user uploaded files should go
+media_folder: "site/static/img"
 public_folder: "img"
 
-collections: # A list of collections the CMS should be able to edit
-  - name: "ae_pages" # Used in routes, ie.: /admin/collections/:slug/edit
+collections:
+  - name: "ae_pages"
     label: "Blog in AE"
     filter: {field: "country", value: "ae"}
-    folder: "site/content/pages" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    fields:
-      - {label: "Country", name: "country", widget: "select", options: ["ae", "bh"]}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - label: "Countries"
-        name: "countries"
-        widget: "list"
-        default: ["ae","bh","fr"]
-  - name: "bh_pages" # Used in routes, ie.: /admin/collections/:slug/edit
-    label: "Blog in BH"
-    filter: {field: "country", value: "bh"}
-    folder: "site/content/pages"
+    folder: "site/content/pages/ae"
     create: true
     fields:
       - {label: "Country", name: "country", widget: "select", options: ["ae", "bh"]}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "bh_pages"
+    label: "Blog in BH"
+    filter: {field: "country", value: "bh"}
+    folder: "site/content/pages/bh"
+    create: true
+    fields:
+      - {label: "Country", name: "country", widget: "select", options: ["ae", "bh"]}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+- label: "Links"
+  name: "links"
+  files:
+    - label: "Links AE"
+      name: "links_ae"
+      file: "site/content/links_ae.yml"
+      fields:
+        - {label: Title, name: title, widget: string}
+        - {label: Url, name: url, widget: string}
+    - label: "Links BH"
+      name: "links_bh"
+      file: "site/content/links_bh.yml"
+      fields:
+        - {label: Title, name: title, widget: string}
+        - {label: Url, name: url, widget: string}
