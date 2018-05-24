@@ -17,7 +17,6 @@ collections: # A list of collections the CMS should be able to edit
       - label: "Countries"
         name: "countries"
         widget: "list"
-        allow_add: false
         default: ["ae","bh","fr"]
   - name: "bh_pages" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Blog in BH"
