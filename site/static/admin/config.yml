@@ -5,12 +5,25 @@ media_folder: "site/static/img"
 public_folder: "img"
 
 collections:
+  - name: "countries"
+    label: "Countries"
+    folder: "site/content/countries"
+    create: true
+    fields:
+      - {label: "name", name: "country", widget: "string"}
   - name: "ae_pages"
     label: "Blog in AE"
     filter: {field: "country", value: "ae"}
     folder: "site/content/pages/ae"
     create: true
     fields:
+      - label: "Post Author"
+        name: "author"
+        widget: "relation"
+        collection: "countries"
+        searchFields: ["name"]
+        valueField: "name"
+        displayFields: ["name"]
       - {label: "Country", name: "country", widget: "select", options: ["ae", "bh"]}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
@@ -23,14 +36,11 @@ collections:
       - {label: "Country", name: "country", widget: "select", options: ["ae", "bh"]}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
-  - name: "links"
-    label: "Links"
-    collections:
-    - name: "ae_links"
-      label: "Liens dans AE"
-      folder: "site/content/links"
-      create: true
-      fields:
-        - {label: "Country", name: "country", widget: "select", options: ["ae", "bh"]}
-        - {label: "Title", name: "title", widget: "string"}
-        - {label: "Body", name: "body", widget: "markdown"}
+  - name: "ae_links"
+    label: "Liens dans AE"
+    folder: "site/content/links"
+    filter: {field: "country", value: "ae"}
+    create: true
+    fields:
+      - {label: "Country", name: "country", widget: "select", options: ["ae", "bh"]}
+      
