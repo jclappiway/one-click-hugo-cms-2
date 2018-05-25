@@ -16,6 +16,7 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Key", name: "name", widget: "string"}
+      - {label: "Url", name: "url", widget: "string"}
 
   - name: "pages"
     label: "Pages"
